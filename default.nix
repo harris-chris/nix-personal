@@ -5,8 +5,11 @@ let
     echo "Test for personal channel"
   '';
 
-  channelPackages = {
+  channelPackages = rec {
     inherit hello;
     getworkspacename = pkgs.callPackage ./packages/get-workspace-name/get-workspace-name.nix {};
+    kakounetoworkspace = pkgs.callPackage ./packages/kakoune-to-workspace/kakoune-to-workspace.nix {
+      getworkspacename = getworkspacename;
+    };
   };
 in channelPackages
