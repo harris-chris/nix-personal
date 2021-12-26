@@ -6,6 +6,10 @@ let
 
     desktop="$(${getworkspacename}/bin/getworkspacename)"
 
+    echo "RAN COMMAND"
+    echo ${getworkspacename}/bin/getworkspacename
+    echo $desktop
+
     # bspc result was empty, so most likely not using bspwm
     [ -z "$desktop" ] && exec ${kakoune}/bin/kak "$@"
 

@@ -5,5 +5,6 @@ in pkgs.mkShell {
   buildInputs = with personalPkgs; [
     pkgs.which
     getworkspacename
+    kakounetoworkspace
   ];
 }
