@@ -18,4 +18,4 @@ let
         exec ${kakoune}/bin/kak -s $desktop $@
     fi
   '';
-in writeShellScriptBin "kakounetoworkspace" script
+in writeShellScriptBin "kk" script
