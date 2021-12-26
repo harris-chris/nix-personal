@@ -18,9 +18,9 @@ let
     # if session with desktop id is found, connect to it. otherwise create it
     echo $(${kakoune}/bin/kak -l | grep -q "^''${desktop}$")
     if ${kakoune}/bin/kak -l | grep -q "^''${desktop}$"; then
-        exec ${kakoune}/bin/kak -c "$desktop" "$@"
+        exec ${kakoune}/bin/kak -c $desktop $@
     else
-        exec ${kakoune}/bin/kak -s "$desktop" "$@"
+        exec ${kakoune}/bin/kak -s $desktop $@
     fi
   '';
 in writeShellScriptBin "kakounetoworkspace" script
