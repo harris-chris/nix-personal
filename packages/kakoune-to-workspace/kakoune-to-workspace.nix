@@ -16,6 +16,7 @@ let
     ${kakoune}/bin/kak -clear
 
     # if session with desktop id is found, connect to it. otherwise create it
+    echo $(${kakoune}/bin/kak -l | grep -q "^''${desktop}$")
     if ${kakoune}/bin/kak -l | grep -q "^''${desktop}$"; then
         exec ${kakoune}/bin/kak -c "$desktop" "$@"
     else
