@@ -1,3 +1,4 @@
+{ overrides ? {} }:
 let
   pkgs = import <nixpkgs> {};
 
