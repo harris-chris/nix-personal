@@ -3,8 +3,6 @@
 stdenv.mkDerivation rec {
   name = "getworkspacename";
   src = ./getWorkspaceName.cpp;
-  # builder = "${bash}/bin/bash";
-  # args = [ ./builder.sh ];
   dontUnpack = true;
   buildPhase = ''
     g++ -o getworkspacename $src

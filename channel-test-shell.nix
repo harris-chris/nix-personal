@@ -1,8 +1,7 @@
-{ overrides ? {} }:
 with builtins; let
-  channelPkgs = import <personal> {};
   pkgs = import <nixpkgs> {};
-  channelPkgNames = (map (name: getAttr name channelPkgs) (attrNames channelPkgs));
+  channelPkgs = import <personal> { pkgs = pkgs; };
+  channelPkgNames = with builtins; (map (name: getAttr name channelPkgs) (attrNames channelPkgs));
 in pkgs.mkShell {
   buildInputs = channelPkgNames ++ [ pkgs.which ];
 }
